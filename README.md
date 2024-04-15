@@ -61,6 +61,64 @@ Este repositorio contiene una aplicación PHP CRUD (Create, Read, Update, Delete
 
 Esta aplicación es una demostración básica y no implementa medidas avanzadas de seguridad. Es recomendable utilizar declaraciones preparadas (prepared statements) u ORM para las interacciones con la base de datos para prevenir ataques de inyección SQL.
 
+## Informacion general
+ 
+Un CRUD (Create, Read, Update, Delete) es una operación básica en la gestión de bases de datos y sistemas de información que permite crear, leer, actualizar y eliminar datos. Para elaborar formularios que permitan realizar estas operaciones, necesitarás diseñar interfaces que permitan a los usuarios interactuar con la base de datos de manera eficiente y segura. Aquí te muestro un ejemplo básico de cómo podrían ser estos formularios:
+
+<form action="crear_registro.php" method="POST">
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre" name="nombre" required><br>
+  
+  <label for="edad">Edad:</label>
+  <input type="number" id="edad" name="edad" required><br>
+  
+  <button type="submit">Guardar</button>
+</form>
+
+## Formulario de Lectura (Read):
+Puede ser una tabla que muestre todos los registros existentes en la base de datos, o un formulario de búsqueda para encontrar registros específicos.
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Edad</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Aquí se mostrarán los registros obtenidos de la base de datos -->
+  </tbody>
+</table>
+
+## Formulario de Actualización (Update):
+Campos prellenados con la información actual del registro seleccionado, permitiendo al usuario modificarlos.
+Botón de "Actualizar" para enviar los cambios realizados.
+
+<form action="actualizar_registro.php" method="POST">
+  <input type="hidden" id="id" name="id" value="ID_DEL_REGISTRO_A_ACTUALIZAR">
+  
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre" name="nombre" value="NOMBRE_ACTUAL" required><br>
+  
+  <label for="edad">Edad:</label>
+  <input type="number" id="edad" name="edad" value="EDAD_ACTUAL" required><br>
+  
+  <button type="submit">Actualizar</button>
+</form>
+
+
+## Formulario de Eliminación (Delete):
+Confirmación antes de eliminar un registro.
+Botón de "Eliminar" para confirmar la eliminación
+
+<form action="eliminar_registro.php" method="POST">
+  <input type="hidden" id="id" name="id" value="ID_DEL_REGISTRO_A_ELIMINAR">
+  
+  <p>¿Estás seguro de que quieres eliminar este registro?</p>
+  <button type="submit">Eliminar</button>
+</form>
+
 ---
 
 Siéntete libre de contribuir a este proyecto o sugerir mejoras. Para cualquier consulta o problema, por favor abre un issue en este repositorio.
